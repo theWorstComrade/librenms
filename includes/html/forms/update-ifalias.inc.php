@@ -15,9 +15,9 @@ header('Content-type: application/json');
 
 $status = 'error';
 
-$descr = $_POST['descr'];
+$descr = strip_tags($_POST['descr']);
 $device_id = $_POST['device_id'];
-$ifName = $_POST['ifName'];
+$ifName = strip_tags($_POST['ifName']);
 $port_id = $_POST['port_id'];
 
 if (! empty($ifName) && is_numeric($port_id)) {
