@@ -22,7 +22,7 @@ class UpdateUserRequest extends FormRequest
         $user = $this->route('user');
         if ($user && $this->user()->can('update', $user)) {
             // normal users cannot edit their level or ability to modify a password
-            unset($this['level'], $this['can_modify_passwd']);
+            unset($this['level'], $this['can_modify_passwd'], $this['username'], $this['auth_id'], $this['auth_type']);
 
             return true;
         }
