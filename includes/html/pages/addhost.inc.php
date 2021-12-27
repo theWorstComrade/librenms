@@ -46,8 +46,8 @@ if (! empty($_POST['hostname'])) {
             $additional = [
                 'snmp_disable' => 1,
                 'os'           => $_POST['os'] ? $_POST['os_id'] : 'ping',
-                'hardware'     => $_POST['hardware'],
-                'sysName'      => $_POST['sysName'],
+                'hardware'     => strip_tags($_POST['hardware']),
+                'sysName'      => strip_tags($_POST['sysName']),
             ];
         } elseif ($_POST['snmpver'] === 'v2c' || $_POST['snmpver'] === 'v1') {
             if ($_POST['community']) {
