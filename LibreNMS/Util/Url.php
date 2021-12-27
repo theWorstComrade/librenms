@@ -79,7 +79,7 @@ class Url
         // beginning of overlib box contains large hostname followed by hardware & OS details
         $contents = '<div><span class="list-large">' . $device->displayName() . '</span>';
         if ($device->hardware) {
-            $contents .= ' - ' . htmlentities($device->hardware);
+            $contents .= ' - ' . htmlentities(strip_tags($device->hardware));
         }
 
         if ($device->os) {
@@ -141,7 +141,7 @@ class Url
 
         $content = '<div class=list-large>' . addslashes(htmlentities($port->device->displayName() . ' - ' . $label)) . '</div>';
         if ($description = $port->getDescription()) {
-            $content .= addslashes(htmlentities($description)) . '<br />';
+            $content .= addslashes(htmlentities(strip_tags($description))) . '<br />';
         }
 
         $content .= "<div style=\'width: 850px\'>";

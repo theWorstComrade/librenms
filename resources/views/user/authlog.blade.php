@@ -25,7 +25,7 @@
                 @foreach($authlog as $log)
                     <tr>
                         <td>{{ $log->datetime }}</td>
-                        <td>{{ $log->user }}</td>
+                        <td>{{ e($log->user) }}</td>
                         <td>{{ $log->address }}</td>
                         <td>{{ $log->result }}</td>
                     </tr>
